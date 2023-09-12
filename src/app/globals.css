@@ -3,6 +3,12 @@ body{
 }
 
 /* sign up page */
+
+.disapledbtn {
+
+ cursor: not-allowed !important; 
+}
+
 .signuppage,.loginpage{
     display: flex;
     justify-content: center;
