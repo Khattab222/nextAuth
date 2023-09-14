@@ -3,11 +3,13 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 
 
 const Signup = () => {
   const router = useRouter()
   const [buttonDisabled, setbuttonDisabled] = useState(false)
+  const [loading, setloading] = useState(false)
   const [user, setUser] = useState({
     email:"",
     password:"",
@@ -24,10 +26,19 @@ const Signup = () => {
   }, [user])
   
 
-  const handleSubmit = (e) =>{
+  const handleSubmit =async (e) =>{
     e.preventDefault()
-    console.log("ssssssssssssssssss")
-
+    try {
+      setloading(true)
+   const {data} = await axios.post('/api/users/signup',user);
+   console.log(data);
+   router.push('/login')
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+    }finally{
+      setloading(false)
+    }
   }
   return (
     <div className='signuppage'>
@@ -40,7 +51,7 @@ const Signup = () => {
 			<input onChange={(e)=> setUser({...user,email:e.target.value})} type="email" className="input" placeholder="Email"/>
 			<input onChange={(e)=> setUser({...user,password:e.target.value})} type="password" className="input" placeholder="Password"/>
     </div>
-    <button type='submit' className={buttonDisabled?'disapledbtn':""} disabled={buttonDisabled} >Sign up</button>
+    <button type='submit' className={buttonDisabled?'disapledbtn':""} disabled={buttonDisabled} >{loading?"loading...":"Sign up"}</button>
 </form>
 <div className="form-section">
   <p>Have an account? <Link href="/login">Log in</Link> </p>
