@@ -25,16 +25,16 @@ const Signup = () => {
   }
   }, [user])
   
-
+// handle submit
   const handleSubmit =async (e) =>{
     e.preventDefault()
     try {
       setloading(true)
    const {data} = await axios.post('/api/users/signup',user);
-   console.log(data);
+
    router.push('/login')
     } catch (error) {
-      console.log(error)
+
       toast.error(error.message)
     }finally{
       setloading(false)
