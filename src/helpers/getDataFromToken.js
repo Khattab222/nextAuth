@@ -1,4 +1,4 @@
-import { decode, jwt } from 'jsonwebtoken';
+import  jwt  from 'jsonwebtoken';
 import { NextResponse } from 'next/server';
 export const GetDataFromToken = (req) =>{
 

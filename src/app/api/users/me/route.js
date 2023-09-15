@@ -14,11 +14,11 @@ export const GET =async (request) =>{
             if (!user) {
                 return NextResponse.json({message:'invalid user Id'},{cause:'400'})
             }
-            return 
+            return NextResponse.json({message:'success',user})
 
 
     } catch (error) {
-        
+        return NextResponse.json({error:error.message},{cause:'500'})
     }
     
 }
