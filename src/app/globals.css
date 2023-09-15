@@ -169,6 +169,7 @@ body{
     width: 100%;
     border-radius: 0.5rem;
     text-transform: uppercase;
+    cursor: pointer;
   }
   
   .signup-link {
@@ -181,3 +182,33 @@ body{
   .signup-link a {
     text-decoration: underline;
   }
+
+   /* logout button */
+   .Logoutbtn {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 10em;
+    border-radius: 1rem;
+    color: lightcoral;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+   }
+   
+   .Logoutbtn:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+   }
+   
+   .Logoutbtn:hover:not(:disabled) {
+    background: lightcoral;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+   }
+   
+   .Logoutbtn:disabled {
+    cursor: auto;
+    color: grey;
+   }
