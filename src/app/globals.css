@@ -212,3 +212,16 @@ body{
     cursor: auto;
     color: grey;
    }
+
+   .getdetails{
+    background-color:royalblue;
+    margin-top: 10px;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 10em;
+    border-radius: 1rem;
+    color: lightcoral;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+   }

@@ -1,6 +1,7 @@
 "use client"
 
 import axios from "axios"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect,useState } from "react"
 import toast, { Toaster } from "react-hot-toast"
@@ -35,8 +36,10 @@ const ProfilePage = () => {
     <div style={{height:'100vh',color:'#fff', display:'flex',flexDirection:'column', justifyContent:'center',alignItems:'center'}}>
       <div><Toaster/></div>
         <h2>profile page</h2>
-        <h2>Welcome {userData.username}</h2>
+        <h2>Welcome {userData?.username}</h2>
         <button onClick={logout} className="Logoutbtn"> Logout
+</button>
+        <button  className="getdetails"><Link href={`/profile/${userData?._id}`}> getUser Details </Link>
 </button>
       
     </div>
