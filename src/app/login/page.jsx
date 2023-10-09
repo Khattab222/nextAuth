@@ -3,7 +3,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 
 const LoginPage = () => {
@@ -55,7 +55,7 @@ setloading(false)
   }
   return (
     <div className='loginpage'>
-      
+     <div> <Toaster/></div>
     <form className="loginform" onSubmit={handleSubmit}>
        <p className="form-title">Sign in to your account</p>
         <div className="input-container">
