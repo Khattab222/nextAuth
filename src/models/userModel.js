@@ -26,8 +26,7 @@ isAdmin:{
 },
 forgotpasswordtoken:String,
 forgotpasswordtokenexpiry:Date,
-verifytoken:String,
-verifyTokenExpiry:Date
+
 
 });
 

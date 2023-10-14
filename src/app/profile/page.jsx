@@ -29,7 +29,7 @@ const ProfilePage = () => {
 
       const {data} = await axios.get('/api/users/me');
       setuserData(data.user);
-      console.log(data.user);
+ 
 
     }
   return (

@@ -18,7 +18,7 @@ export async function POST (request){
         // check user exist
         const userExist =await User.findOne({email});
         if (userExist) {
-            console.log(userExist)
+        
          return   NextResponse.json({message:'user already exist'},{cause:400})
         }
         const hashPassword = bcryptjs.hashSync(password,6);
@@ -43,7 +43,7 @@ export async function POST (request){
         throw new Error("unknown error please try again")
             
         }
-  
+        await newUser.save()
         return NextResponse.json({message:'user created success please confirm from your mail'},{cause:201})
 
     } catch (error) {

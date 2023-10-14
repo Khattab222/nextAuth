@@ -3,7 +3,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 
 const Signup = () => {
@@ -31,8 +31,9 @@ const Signup = () => {
     try {
       setloading(true)
    const {data} = await axios.post('/api/users/signup',user);
+   toast.success("please confirm your email")
 
-   router.push('/login')
+  //  router.push('/login')
     } catch (error) {
 
       toast.error(error.message)
@@ -42,6 +43,7 @@ const Signup = () => {
   }
   return (
     <div className='signuppage'>
+         <div> <Toaster/></div>
     <div className="form-box">
 <form className="form" onSubmit={handleSubmit}>
     <span className="title">Sign up</span>
